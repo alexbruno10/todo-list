@@ -14,13 +14,19 @@
     border: 1px solid #000000;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
+    margin: 0 auto;
+    padding: 2rem 1rem 12rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
     img {
-        background: var(--danger);
-        position: relative;
         width: 126px;
         height: 48px;
-        left: 657px;
-        top: 72px;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 5rem;
+        display: block;
     }
 
 }
