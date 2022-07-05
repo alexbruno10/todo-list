@@ -1,0 +1,26 @@
+.headerContent {
+    
+    box-sizing: border-box;
+    
+    position: absolute;
+    height: 200px;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    
+    /* Gray 700 */
+    
+    background: #0D0D0D;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    img {
+        background: var(--danger);
+        position: relative;
+        width: 126px;
+        height: 48px;
+        left: 657px;
+        top: 72px;
+    }
+
+}
