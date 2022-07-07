@@ -1,5 +1,5 @@
 .divContent {
-    display: flex;
+    //display: flex;
     flex-direction: row;
     align-items: center;
     //justify-content: center;
@@ -127,4 +127,59 @@
             flex-grow: 0;
         }
 
+    }
+
+    .listTasks {
+        box-sizing: border-box;
+        margin-top: 2rem;
+
+        /* Auto layout */
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 64px 24px;
+        gap: 16px;
+        position: relative;
+        
+        width: 736px;
+        height: 244px;
+        
+        /* Grey 400 */
+        
+        border-top: 1px solid #333333;
+        border-radius: 8px;
+        
+        /* Inside auto layout */
+        
+        flex: none;
+        order: 1;
+        align-self: stretch;
+        flex-grow: 0;
+    }
+
+    .pText {
+        width: 688px;
+        height: 44px;
+
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 140%;
+        /* or 22px */
+
+        text-align: center;
+
+        /* Gray 300 */
+
+        color: var(--gray-300);
+
+
+        /* Inside auto layout */
+
+        flex: none;
+        order: 1;
+        align-self: stretch;
+        flex-grow: 0;
     }
