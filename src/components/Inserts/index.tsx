@@ -25,6 +25,7 @@ function Inserts() {
         type="button"
         onClick={addTask}
       >
+        Criar 
         <img src={Add} alt="Fechal modal" />
       </button>
 
