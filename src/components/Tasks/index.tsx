@@ -2,13 +2,12 @@ import React from "react"
 import styles from './styles.module.scss'
 import Clipboard from '/logo/clipboard.svg'
 
-interface Tasks {
-    task: object
+interface TasksProps {
+    task: object,
+    newTasks: number
 }
 
-function Tasks (task : Tasks ) {
-
-    console.log(task);
+function Tasks ({task, newTasks} : TasksProps ) {
 
     return(
         <>
@@ -16,7 +15,7 @@ function Tasks (task : Tasks ) {
             <div className={styles.labelContent}>
                 <div className={styles.tasksContent}>
                     <p className={styles.newTasks}>Tarefas criadas</p>
-                    <strong>0</strong>
+                    <strong>{newTasks}</strong>
                 </div>
                 <div className={styles.finishContent}>
                     <p className={styles.finishTasks}>Concluídas</p>

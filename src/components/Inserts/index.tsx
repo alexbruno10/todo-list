@@ -56,7 +56,7 @@ function Inserts() {
 
     </div>
 
-    <Tasks task={task}/>
+    <Tasks task={task} newTasks={task.length}/>
     </>
   )
 }
