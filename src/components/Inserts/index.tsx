@@ -1,14 +1,39 @@
 import { useState } from 'react'
+import Tasks from '../Tasks';
 import styles from './styles.module.scss'
 import Add from '/logo/add.svg'
 
+
+interface Task {
+  id: number;
+  description: string;
+  status: boolean;
+};
+
+
 function Inserts() {
 
-  const [task, setTask] = useState('');
+  const [task, setTask] = useState<Task[]>([]);
+  const [newDescription, setNewDescription] = useState('');
 
   function addTask() {
-    console.log(task)
+    
+    const description = newDescription;
+
+    if(!description) return;
+
+    const newTask = {
+      id: Math.random(),
+      description: description,
+      status: false
+    }
+
+    //console.log(newTask)
+    setTask((oldState) => [...oldState, newTask])
   }
+
+
+
 
   return (
     <>
@@ -17,8 +42,8 @@ function Inserts() {
         type="text"
         name="task" 
         className={styles.inputContent}
-        value={task}
-        onChange={({ target }) => setTask(target.value)}
+        value={newDescription}
+        onChange={(e) => setNewDescription(e.target.value)}
         />
         <button
         className={styles.buttonContent}
@@ -30,6 +55,8 @@ function Inserts() {
       </button>
 
     </div>
+
+    <Tasks task={task}/>
     </>
   )
 }

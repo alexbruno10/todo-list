@@ -2,7 +2,13 @@ import React from "react"
 import styles from './styles.module.scss'
 import Clipboard from '/logo/clipboard.svg'
 
-function Tasks () {
+interface Tasks {
+    task: object
+}
+
+function Tasks (task : Tasks ) {
+
+    console.log(task);
 
     return(
         <>
