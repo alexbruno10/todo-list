@@ -2,6 +2,8 @@ import { useState } from 'react'
 import styles from './styles.module.scss'
 import Add from '/logo/add.svg'
 import Clipboard from '/logo/clipboard.svg'
+import { TbTrash } from 'react-icons/tb'
+import {AiOutlineCheckCircle} from 'react-icons/ai'
 
 
 interface Task {
@@ -15,6 +17,9 @@ function Inserts() {
 
   const [task, setTask] = useState<Task[]>([]);
   const [newDescription, setNewDescription] = useState('');
+
+  const newTasks = task.length
+  const totalTaksFinished = task.filter(tasks => tasks.status === true).length
 
   function addTask() {
     
@@ -33,23 +38,19 @@ function Inserts() {
     setNewDescription('');
   }
 
-  async function handleCheckbox(id: number) {
-    console.log(id)
-
-    const updateTask = task
-
-    const result = await updateTask.map(tasks => {
-      if(tasks.id === id) {
-        tasks.status = true;
+  function handleCheckbox(id: number) {
+    const newTask = task.map((tasks) => {
+      if(id === tasks.id) {
+        return {
+          ...tasks,
+          status: !tasks.status
+        };
       }
-      return result;
+      return newTask;
+    });
+    console.log(newTask);
+    setTask(newTask)
     }
-    )
-
-  }
-
-
-
 
   return (
     <>
@@ -76,11 +77,11 @@ function Inserts() {
         <div className={styles.labelContent}>
             <div className={styles.tasksContent}>
                 <p className={styles.newTasks}>Tarefas criadas</p>
-                <strong>{task.length}</strong>
+                <strong>{newTasks}</strong>
             </div>
             <div className={styles.finishContent}>
                 <p className={styles.finishTasks}>Concluídas</p>
-                <strong>0</strong>
+                <strong>{totalTaksFinished} de {newTasks}</strong>
             </div>
         </div>
 
@@ -96,12 +97,16 @@ function Inserts() {
         </div>
         
         : task.map(tasks => (
-          <div key={tasks.id}>
+          <div className={styles.divTasks} key={tasks.id}>
             <input type="checkbox"
             checked={tasks.status}
             onChange={() => {handleCheckbox(tasks.id)}} />
             <p>{tasks.description}</p>
+            <button>
+              <TbTrash />
+            </button>
           </div>
+            
         ))}
 
 
