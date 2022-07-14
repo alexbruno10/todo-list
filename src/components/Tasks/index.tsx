@@ -33,6 +33,21 @@ function Inserts() {
     setNewDescription('');
   }
 
+  async function handleCheckbox(id: number) {
+    console.log(id)
+
+    const updateTask = task
+
+    const result = await updateTask.map(tasks => {
+      if(tasks.id === id) {
+        tasks.status = true;
+      }
+      return result;
+    }
+    )
+
+  }
+
 
 
 
@@ -81,9 +96,12 @@ function Inserts() {
         </div>
         
         : task.map(tasks => (
-          <>
-               <p><b>{tasks.description}</b></p>
-          </>
+          <div key={tasks.id}>
+            <input type="checkbox"
+            checked={tasks.status}
+            onChange={() => {handleCheckbox(tasks.id)}} />
+            <p>{tasks.description}</p>
+          </div>
         ))}
 
 
