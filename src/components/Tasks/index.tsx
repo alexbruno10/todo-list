@@ -3,8 +3,6 @@ import styles from './styles.module.scss'
 import Add from '/logo/add.svg'
 import Clipboard from '/logo/clipboard.svg'
 import Tb from '/logo/tb.svg'
-import {AiOutlineCheckCircle} from 'react-icons/ai'
-
 
 interface Task {
   id: number;
@@ -14,10 +12,10 @@ interface Task {
 
 
 function Inserts() {
-
+  
   const [task, setTask] = useState<Task[]>([]);
   const [newDescription, setNewDescription] = useState('');
-
+  
   const newTasks = task.length
   const totalTaksFinished = task.filter(tasks => tasks.status === true).length
 
@@ -51,6 +49,13 @@ function Inserts() {
     });
     console.log(newTask);
     setTask(newTask)
+    }
+  
+    function handleDelete(id: number) {
+      const newTasks = task.filter(tasks => {
+        return tasks.id != id;
+      });
+      setTask(newTasks)
     }
 
   return (
@@ -106,7 +111,7 @@ function Inserts() {
             checked={tasks.status}
             onChange={() => {handleCheckbox(tasks.id)}} />
             <p className={tasks.status == true ? styles.descriptionCompleted : ''}>{tasks.description}</p>
-            <button>
+            <button onClick={() => {handleDelete(tasks.id)}}>
               <img src={Tb} alt="Ícone de Lixeira" />
             </button>
           </div>
