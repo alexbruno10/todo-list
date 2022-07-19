@@ -2,7 +2,7 @@ import { useState } from 'react'
 import styles from './styles.module.scss'
 import Add from '/logo/add.svg'
 import Clipboard from '/logo/clipboard.svg'
-import { TbTrash } from 'react-icons/tb'
+import Tb from '/logo/tb.svg'
 import {AiOutlineCheckCircle} from 'react-icons/ai'
 
 
@@ -39,6 +39,7 @@ function Inserts() {
   }
 
   function handleCheckbox(id: number) {
+    console.log(id);
     const newTask = task.map((tasks) => {
       if(id === tasks.id) {
         return {
@@ -46,7 +47,7 @@ function Inserts() {
           status: !tasks.status
         };
       }
-      return newTask;
+      return tasks;
     });
     console.log(newTask);
     setTask(newTask)
@@ -97,13 +98,16 @@ function Inserts() {
         </div>
         
         : task.map(tasks => (
+
+          
+
           <div className={styles.divTasks} key={tasks.id}>
             <input type="checkbox"
             checked={tasks.status}
             onChange={() => {handleCheckbox(tasks.id)}} />
-            <p>{tasks.description}</p>
+            <p className={tasks.status == true ? styles.descriptionCompleted : ''}>{tasks.description}</p>
             <button>
-              <TbTrash />
+              <img src={Tb} alt="Ícone de Lixeira" />
             </button>
           </div>
             
