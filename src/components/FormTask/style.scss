@@ -1,0 +1,43 @@
+.task {
+    text-align: center;
+    margin-top: -2.3rem;
+
+
+    form {
+        gap: 0.5rem;
+        padding: 0;
+
+        input {
+            height: 3.68rem;
+            width: 46rem;
+            padding: 1rem;
+    
+            background: var(--gray-700);
+            color: var(--white);
+    
+            border: 1px solid var(--gray-800);
+            border-radius: 0.5rem;
+    
+            flex: none;
+            order: 0;
+            flex-grow: 1;
+        }
+
+        button {
+            background: var(--blue-dark);
+            margin-left: 0.5rem;
+            height: 3.68rem;
+            width: 5.62rem;
+            color: var(--white);
+
+            border-radius: 0.5rem;
+
+            flex: none;
+            order: 1;
+            flex-grow: 0;
+        }
+        
+    }
+
+
+}
