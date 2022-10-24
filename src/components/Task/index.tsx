@@ -1,8 +1,9 @@
 import { useState } from "react";
 import FormTask from "../FormTask";
+import Tasks from "../Tasks";
 
 
-interface newTask {
+export interface Task {
     id: number,
     description: string;
     completed: boolean;
@@ -11,7 +12,7 @@ interface newTask {
 
 export default function Task() {
 
-    const [task, setTask] = useState<newTask[]>([])
+    const [task, setTask] = useState<Task[]>([])
     
     function createNewTask(description: string) {
         
@@ -28,6 +29,7 @@ export default function Task() {
     return (
         <>
         <FormTask createNewTask={createNewTask} />
+        <Tasks task={task} />
         </>
     )
 }
