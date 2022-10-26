@@ -19,9 +19,9 @@ export default function FormTask ({createNewTask}: Props) {
 
     function onChangeDescription(event: ChangeEvent<HTMLInputElement>) {
         setDescription(event.target.value);
-      }
     
-
+    }
+    
     return (
         <div className="task">
         <form onSubmit={handleForm} action="">
