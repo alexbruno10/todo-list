@@ -1,6 +1,8 @@
 .task {
     text-align: center;
-    margin-top: -2.3rem;
+    width: 100%;
+    max-width: 46rem;
+    margin: -2.3rem auto;
 
 
     form {
@@ -9,7 +11,7 @@
 
         input {
             height: 3.68rem;
-            width: 46rem;
+            width: 39.87rem;
             padding: 1rem;
     
             background: var(--gray-700);
