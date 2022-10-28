@@ -67,4 +67,9 @@
 .tasksNotRegistered {
     margin-top: 8rem;
     text-align: center;
+    color: var(--gray-200);
+
+    img {
+        margin-bottom: 1rem;
+    }
 }

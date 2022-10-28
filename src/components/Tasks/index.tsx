@@ -29,15 +29,19 @@ export default function Tasks({task}: Props) {
                 </div>
             </div>
             <hr/>
-            <div className="tasksNotRegistered">
-                <img src={Book} alt="Image of a book, symbolizing attribution" />
-                <p>Você ainda não tem tarefas cadastradas</p>
-                <p>Crie tarefas e organize seus itens a fazer</p>
-            </div>
+
         </div>
-        {task.map(tasks => (
-            <p key={tasks.id}>{tasks.description}</p>
-        ))}
+        {task.length === 0 ? (
+            <div className="tasksNotRegistered">
+            <img src={Book} alt="Image of a book, symbolizing attribution" />
+            <p><b>Você ainda não tem tarefas cadastradas</b></p>
+            <p>Crie tarefas e organize seus itens a fazer</p>
+        </div>
+        ) : (
+            task.map(task => (
+                <p key={task.id}>{task.description}</p>
+            ))
+        )}
         </>
     )
 }
