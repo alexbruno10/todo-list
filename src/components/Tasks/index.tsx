@@ -39,7 +39,9 @@ export default function Tasks({task}: Props) {
         </div>
         ) : (
             task.map(task => (
-                <p key={task.id}>{task.description}</p>
+                <div className="contentTask">
+                    <p key={task.id}>{task.description}</p>
+                </div>
             ))
         )}
         </>
