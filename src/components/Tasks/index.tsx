@@ -2,16 +2,18 @@ import {Task} from '../Task'
 import './style.scss'
 import Book from '/book.svg'
 import {TbTrash} from 'react-icons/tb'
+import { BsFillCheckCircleFill } from 'react-icons/bs'
 
 interface Props {
     task: Task[];
+    checkTask: () => void;
 }
 
-export default function Tasks({task}: Props) {
+export default function Tasks({task, checkTask}: Props) {
 
 
-    function handleCheckButton() {
-        console.log('oi, chegamos no button');
+    function handleCheckButton(id: number) {
+        console.log(id);
     }
 
     return (
@@ -46,9 +48,10 @@ export default function Tasks({task}: Props) {
         </div>
         ) : (
             task.map(task => (
-                <div className="contentTask">
-                    <button onClick={handleCheckButton} className="checkButton">
-                        <div />
+                <div key={task.id} className="contentTask">
+                    <button onClick={() => handleCheckButton(task.id)} className="checkButton">
+                        <BsFillCheckCircleFill />
+                        {/* <div /> */}
                     </button> 
                     <p key={task.id}>{task.description}</p>
                     <button className="TrashIcon">

@@ -31,10 +31,14 @@ export default function Task() {
         console.log(task);
     }
 
+    function checkTask() {
+        console.log('Chegou no Task')
+    }
+
     return (
         <>
         <FormTask createNewTask={createNewTask} />
-        <Tasks task={task} />
+        <Tasks task={task} checkTask={checkTask} />
         </>
     )
 }
