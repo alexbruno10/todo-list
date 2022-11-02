@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FormTask from "../FormTask";
 import Tasks from "../Tasks";
 
@@ -12,6 +12,8 @@ export interface Task {
     completed: boolean;
 }
 
+const LOCAL_STORAGE_KEY = 'todo-list:tasks'
+
 
 export default function Task() {
 
@@ -21,10 +23,25 @@ export default function Task() {
 
     const totalTaskCompleted = task.filter((task) => task.completed).length;
 
-    
+    function getLocalStorage () {
+        const tasks = localStorage.getItem(LOCAL_STORAGE_KEY)
+        if(tasks) {
+            setTask(JSON.parse(tasks))
+        }
+    }
+
+    useEffect(() => {
+        getLocalStorage()
+    }, [])
+
+    function saveTask(newTask: Task[]) {
+        setTask(newTask)
+        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(newTask))
+    }
+
     function createNewTask(description: string) {
         
-        setTask([...task, {
+        saveTask([...task, {
            id: Math.random(),
            description: description,
            completed: false 
@@ -50,7 +67,7 @@ export default function Task() {
             return task
         })
 
-        setTask(newTasks)
+        saveTask(newTasks)
 
         toast.success('Tarefa concluída!')
 
@@ -61,7 +78,7 @@ export default function Task() {
 
         const newTasks = newTask.filter((task) => task.id != id)
 
-        setTask(newTasks)
+        saveTask(newTasks)
 
         toast('Tarefa removida!', {
             icon: '👋',
