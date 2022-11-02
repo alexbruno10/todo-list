@@ -16,6 +16,11 @@ export interface Task {
 export default function Task() {
 
     const [task, setTask] = useState<Task[]>([])
+
+    const totalTaskCreated = task.length
+
+    const totalTaskCompleted = task.filter((task) => task.completed).length;
+
     
     function createNewTask(description: string) {
         
@@ -27,7 +32,7 @@ export default function Task() {
         ]);
 
         toast('Tarefa adicionada!', {
-            icon: '👏',
+            icon: '🚀 ',
           });
 
     }
@@ -51,10 +56,27 @@ export default function Task() {
 
     }
 
+    function deleteTask(id: number) {
+        const newTask = task
+
+        const newTasks = newTask.filter((task) => task.id != id)
+
+        setTask(newTasks)
+
+        toast('Tarefa removida!', {
+            icon: '👋',
+          });
+    }
+
+
     return (
         <>
         <FormTask createNewTask={createNewTask} />
-        <Tasks task={task} checkTask={checkTask} />
+        <Tasks task={task} 
+        checkTask={checkTask} 
+        totalTaskCreated={totalTaskCreated} 
+        totalTaskCompleted={totalTaskCompleted}
+        deleteTask={deleteTask}/>
         </>
     )
 }

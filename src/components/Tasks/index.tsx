@@ -7,13 +7,20 @@ import { BsFillCheckCircleFill } from 'react-icons/bs'
 interface Props {
     task: Task[];
     checkTask: (id: number) => void;
+    totalTaskCreated: number;
+    totalTaskCompleted: number;
+    deleteTask: (id: number) => void;
 }
 
-export default function Tasks({task, checkTask}: Props) {
+export default function Tasks({task, checkTask, totalTaskCreated, totalTaskCompleted, deleteTask}: Props) {
 
 
     function handleCheckButton(id: number) {
         checkTask(id)
+    }
+
+    function handleDeleteTask(id: number) {
+        deleteTask(id)
     }
 
     return (
@@ -22,18 +29,20 @@ export default function Tasks({task, checkTask}: Props) {
             <div className="informationTask">
                 <div className="createdTasks">
                     <p>
-                        Tarefas criadas
+                        <b>Tarefas criadas</b>
                     </p>
                     <span>
-                        10
+                        
+                        {totalTaskCreated}
+                        
                     </span>
                 </div>
                 <div className="completedTasks">
                     <p>
-                        Concluídas
+                        <b>Concluídas</b>
                     </p>
                     <span>
-                        0
+                        {totalTaskCompleted}
                     </span>
                 </div>
             </div>
@@ -53,7 +62,7 @@ export default function Tasks({task, checkTask}: Props) {
                         {task.completed === true ? <BsFillCheckCircleFill /> : <div />}
                     </button> 
                     <p className={task.completed === true ? "taskCompleted" : ""}>{task.description}</p>
-                    <button className="TrashIcon">
+                    <button onClick={() => handleDeleteTask(task.id)} className="TrashIcon">
                         <TbTrash size={25}/>
                     </button>
                 </div>
