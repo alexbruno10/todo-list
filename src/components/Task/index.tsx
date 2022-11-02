@@ -26,13 +26,29 @@ export default function Task() {
         }   
         ]);
 
-        toast.success('Tarefa adicionada!')
+        toast('Tarefa adicionada!', {
+            icon: '👏',
+          });
 
-        console.log(task);
     }
 
-    function checkTask() {
-        console.log('Chegou no Task')
+    function checkTask(id: number) {
+        const newTask = task
+
+        const newTasks = newTask.map((task) => {
+            if(task.id === id) {
+                return {
+                    ...task,
+                    completed: !task.completed,
+                }
+            }
+            return task
+        })
+
+        setTask(newTasks)
+
+        toast.success('Tarefa concluída!')
+
     }
 
     return (
