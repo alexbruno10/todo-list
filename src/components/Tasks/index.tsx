@@ -1,12 +1,19 @@
 import {Task} from '../Task'
 import './style.scss'
 import Book from '/book.svg'
+import {TbTrash} from 'react-icons/tb'
 
 interface Props {
     task: Task[];
 }
 
 export default function Tasks({task}: Props) {
+
+
+    function handleCheckButton() {
+        console.log('oi, chegamos no button');
+    }
+
     return (
         <>
         <div className="tasks">
@@ -40,7 +47,13 @@ export default function Tasks({task}: Props) {
         ) : (
             task.map(task => (
                 <div className="contentTask">
+                    <button onClick={handleCheckButton} className="checkButton">
+                        <div />
+                    </button> 
                     <p key={task.id}>{task.description}</p>
+                    <button className="TrashIcon">
+                        <TbTrash size={25}/>
+                    </button>
                 </div>
             ))
         )}
