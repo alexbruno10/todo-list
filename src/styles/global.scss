@@ -7,15 +7,20 @@
   --gray-700: #262626;
   --gray-800: #0D0D0D;
   --gray-900: #121214;
+  --gray-input: #898de7;
 
   --green-500: #00875f;
+  --gray-input: #6fcf97;
 
   --purple: #8284FA;
   --purple-dark: #5E60CE;
 
   --blue: #4EA8DE;
   --blue-dark: #1E6F9F;
+  --blue-primary: #aad7ff;
+  --blue-input: #353662;
 
+  --pink: #fd689f;
   --danger: #E25858;
 }
 
@@ -26,7 +31,7 @@
 }
 
 body {
-	background: var(--gray-600);
+	background: #e9f5fe;
 	color: var(--gray-300);
 	-webkit-font-smoothing: antialiased;
 }

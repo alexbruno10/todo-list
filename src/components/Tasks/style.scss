@@ -6,7 +6,7 @@
     margin-top: 4rem;
 
     hr {
-        border-color: var(--gray-400); 
+        border-color: #e9f5fe; 
         margin-top: 1rem;
     }
 }
@@ -26,14 +26,14 @@
     align-items: center;
 
     p {
-        color: var(--blue);
+        color: var(--blue-input);
         font-size: 0.875rem;
     }
 
     span {
         color: var(--white);
         display: flex;
-        background-color: var(--gray-400);
+        background-color: var(--gray-300);
         font-size: 0.875rem;
         border-radius: 63rem;
         width: 1.56rem;
@@ -49,14 +49,14 @@
     align-items: center;
 
     p {
-        color: var(--purple);
+        color: var(--blue-input);
         font-size: 0.875rem;
     }
 
     span {
         color: var(--white);
         display: flex;
-        background-color: var(--gray-400);
+        background-color: var(--gray-300);
         font-size: 0.875rem;
         border-radius: 63rem;
         width: 1.56rem;
@@ -87,7 +87,7 @@
     padding-right: 1rem;
     justify-content: space-between;
     display: flex;
-    background-color: var(--gray-700);
+    background-color: var(--blue-input);
     color: var(--gray-100);
     width: 46rem;
     height: 4.5rem;
@@ -116,7 +116,7 @@
     margin-right: 0.725rem;
 
     div {
-        border: 2px solid var(--blue);
+        border: 2px solid #6fcf97;
         border-radius: 100%;
         height: 100%;
         width: 100%;
@@ -125,7 +125,7 @@
     svg {
         width: 100%;
         height: 100%;
-        color: var(--purple);
+        color: var(--gray-input);
     }
 
 }
@@ -138,5 +138,5 @@
 .TrashIcon {
     border: none;
     background: none;
-    color: #808080;
+    color: var(--danger);
 }

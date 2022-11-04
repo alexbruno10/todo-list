@@ -25,8 +25,8 @@ export default function FormTask ({createNewTask}: Props) {
     return (
         <div className="task">
         <form onSubmit={handleForm} action="">
-            <input type="text" name={description} value={description} onChange={onChangeDescription} placeholder="Adicione uma nova tarefa"/>
-            <button>Criar</button>
+            <input type="text" name={description} value={description} onChange={onChangeDescription} placeholder="Adicione uma nova tarefa" required/>
+            <button><b>Criar</b></button>
         </form>
         </div>
     )
