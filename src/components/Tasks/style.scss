@@ -6,7 +6,7 @@
     margin-top: 4rem;
 
     hr {
-        border-color: #e9f5fe; 
+        border-color: var(--gray-400); 
         margin-top: 1rem;
     }
 }
@@ -26,14 +26,14 @@
     align-items: center;
 
     p {
-        color: var(--blue-input);
+        color: var(--purple);
         font-size: 0.875rem;
     }
 
     span {
         color: var(--white);
         display: flex;
-        background-color: var(--gray-300);
+        background-color: var(--gray-400);
         font-size: 0.875rem;
         border-radius: 63rem;
         width: 1.56rem;
@@ -49,14 +49,14 @@
     align-items: center;
 
     p {
-        color: var(--blue-input);
+        color: var(--purple);
         font-size: 0.875rem;
     }
 
     span {
         color: var(--white);
         display: flex;
-        background-color: var(--gray-300);
+        background-color: var(--gray-400);
         font-size: 0.875rem;
         border-radius: 63rem;
         width: 1.56rem;
@@ -87,7 +87,7 @@
     padding-right: 1rem;
     justify-content: space-between;
     display: flex;
-    background-color: var(--blue-input);
+    background-color: var(--gray-400);
     color: var(--gray-100);
     width: 46rem;
     height: 4.5rem;
