@@ -21,6 +21,8 @@ export default function Task() {
 
     const totalTaskCreated = task.length
 
+    const teste = 'Oi';
+
     const totalTaskCompleted = task.filter((task) => task.completed).length;
 
     function getLocalStorage () {
