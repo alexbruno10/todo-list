@@ -12,4 +12,6 @@ Projeto desenvolvido em React, que possui as funções de incluir e excluir tare
 * Local Storage
 * Toastify
 
+<br />
+
 <p align="center">Desenvolvido por Alex Bruno</p>
